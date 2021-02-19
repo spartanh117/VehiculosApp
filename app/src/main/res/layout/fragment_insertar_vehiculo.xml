@@ -32,65 +32,81 @@
             android:layout_height="21dp"
             android:layout_marginStart="39dp"
             android:layout_marginLeft="39dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="318dp"
             android:layout_marginRight="318dp"
+            android:layout_marginBottom="7dp"
             android:text="@string/modelo"
+            app:layout_constraintBottom_toTopOf="@+id/edtiTextMatricula"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="158dp" />
+            app:layout_constraintTop_toBottomOf="@+id/edtiTextMarca" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="54dp"
             android:layout_height="21dp"
+            android:layout_marginStart="39dp"
+            android:layout_marginLeft="39dp"
+            android:layout_marginEnd="318dp"
+            android:layout_marginRight="318dp"
+            android:layout_marginBottom="4dp"
             android:text="@string/matricula"
-            tools:layout_editor_absoluteX="39dp"
-            tools:layout_editor_absoluteY="249dp" />
+            app:layout_constraintBottom_toTopOf="@+id/edtiTextMarca3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtiTextMatricula" />
 
         <EditText
             android:id="@+id/edtiTextMarca"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="210dp"
+            android:layout_height="45dp"
             android:layout_marginStart="39dp"
             android:layout_marginLeft="39dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="162dp"
             android:layout_marginRight="162dp"
+            android:layout_marginBottom="24dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="79dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <EditText
             android:id="@+id/edtiTextMatricula"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="210dp"
+            android:layout_height="45dp"
             android:layout_marginStart="39dp"
             android:layout_marginLeft="39dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="162dp"
             android:layout_marginRight="162dp"
+            android:layout_marginBottom="13dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="191dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <EditText
             android:id="@+id/edtiTextMarca3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="210dp"
+            android:layout_height="45dp"
             android:layout_marginStart="39dp"
             android:layout_marginLeft="39dp"
+            android:layout_marginTop="18dp"
             android:layout_marginEnd="162dp"
             android:layout_marginRight="162dp"
+            android:layout_marginBottom="45dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
+            app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="288dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <Button
             android:id="@+id/button"
