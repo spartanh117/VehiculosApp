@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">VehiculosApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="marca">Marca</string>
+    <string name="modelo">Modelo</string>
+    <string name="matricula">Matricula</string>
+    <string name="insertar">Insertar</string>
 </resources>
