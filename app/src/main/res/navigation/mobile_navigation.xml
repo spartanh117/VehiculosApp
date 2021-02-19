@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/insertarVehiculo">
+    <fragment
+        android:id="@+id/insertarVehiculo"
+        android:name="com.example.vehiculosapp.InsertarVehiculo"
+        android:label="Insertar vehiculo"
+        tools:layout="@layout/fragment_insertar_vehiculo" />
+    <fragment
+        android:id="@+id/listaVehiculos"
+        android:name="com.example.vehiculosapp.recycleview.ListaVehiculos"
+        android:label="ListaVehiculos"
+        tools:layout="@layout/fragment_lista_vehiculos" />
+</navigation>
