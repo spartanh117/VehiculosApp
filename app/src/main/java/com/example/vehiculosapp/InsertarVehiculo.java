@@ -1,47 +1,41 @@
 package com.example.vehiculosapp;
 
+import android.content.ContentValues;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
+import com.example.vehiculosapp.BD.VehiculoSQLiteHelper;
+
+import  com.example.vehiculosapp.utilities.Utilities;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link InsertarVehiculo#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class InsertarVehiculo extends Fragment {
+    private EditText marca;
+    private EditText modelo;
+    private EditText matricula;
+    private Button btnInsertar;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public InsertarVehiculo() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment InsertarVehiculo.
-     */
-    // TODO: Rename and change types and number of parameters
     public static InsertarVehiculo newInstance(String param1, String param2) {
         InsertarVehiculo fragment = new InsertarVehiculo();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -49,16 +43,47 @@ public class InsertarVehiculo extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_insertar_vehiculo, container, false);
+        View view = inflater.inflate(R.layout.fragment_insertar_vehiculo, container, false);
+        setUpView(view);
+        btnInsertar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insertarVehiculo();
+            }
+        });
+        return view;
+    }
+
+    private void insertarVehiculo() {
+        try {
+            VehiculoSQLiteHelper conexion = new VehiculoSQLiteHelper(getContext(),"BDVehiculo",null,1);
+            SQLiteDatabase db = conexion.getWritableDatabase();
+
+            ContentValues values = new ContentValues();
+            values.put(Utilities.CAMPO_MATRICULA,matricula.getText().toString());
+            values.put(Utilities.CAMPO_MARCA,marca.getText().toString());
+            values.put(Utilities.CAMPO_MODELO,modelo.getText().toString());
+
+            db.insert(Utilities.TABLA_VEHICULO,null,values);
+            db.close();
+
+            Toast.makeText(getContext(),"se insertado corectamente",Toast.LENGTH_LONG).show();
+        }
+        catch (SQLException e){
+            Toast.makeText(getContext(),"a ocurrido un error"+e.getMessage(),Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void setUpView(View view) {
+        marca = (EditText)view.findViewById(R.id.edtiTextMarca);
+        modelo = (EditText)view.findViewById(R.id.edtiTextModelo);
+        matricula = (EditText)view.findViewById(R.id.edtiTextMatricula);
+        btnInsertar = (Button)view.findViewById(R.id.btnInsertar);
     }
 }

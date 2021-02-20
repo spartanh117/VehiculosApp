@@ -36,4 +36,13 @@ public class Vehiculo {
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", matricula='" + matricula + '\'' +
+                '}';
+    }
 }

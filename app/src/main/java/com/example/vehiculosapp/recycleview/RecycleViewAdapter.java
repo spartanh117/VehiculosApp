@@ -29,12 +29,9 @@ public class RecycleViewAdapter  extends RecyclerView.Adapter<RecycleViewAdapter
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        String modelo = vehiculoModelList.get(position).getModelo();
-        String matricula = vehiculoModelList.get(position).getMatricula();
-        String marca = vehiculoModelList.get(position).getMarca();
-        holder.modelo.setText(modelo);
-        holder.matricula.setText(matricula);
-        holder.marca.setText(marca);
+        String vehiculo = vehiculoModelList.get(position).toString();
+
+        holder.vehiculo.setText(vehiculo);
     }
 
     @Override
@@ -43,15 +40,12 @@ public class RecycleViewAdapter  extends RecyclerView.Adapter<RecycleViewAdapter
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView marca;
-        private TextView modelo;
-        private TextView matricula;
+        private TextView vehiculo;
 
         public ViewHolder(View v) {
             super(v);
-            marca = (TextView) v.findViewById(R.id.txtViewMarca);
-            modelo = (TextView) v.findViewById(R.id.txtViewModelo);
-            matricula = (TextView) v.findViewById(R.id.txtViewMatricula);
+            vehiculo = (TextView) v.findViewById(R.id.textVehiculo);
+
         }
     }
 
