@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class VehiculoSQLiteHelper extends SQLiteOpenHelper {
 
-    final String SQLCREATE ="CREATE TABLE vehiculos ( matricula TEXT,marca TEXT,modelo TEXT)";
+    final String SQLCREATE ="CREATE TABLE vehiculos (id INT, matricula TEXT,marca TEXT,modelo TEXT)";
 
     public VehiculoSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);

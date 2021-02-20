@@ -56,6 +56,7 @@ public class ListaVehiculos extends Fragment {
 
         veiculoModelList = new ArrayList<Vehiculo>();
 
+
         VehiculoSQLiteHelper conexion = new VehiculoSQLiteHelper(getContext(), "BDVehiculo", null, 1);
         SQLiteDatabase db = conexion.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM "+ Utilities.TABLA_VEHICULO,null);

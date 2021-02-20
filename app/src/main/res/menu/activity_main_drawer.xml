@@ -10,7 +10,7 @@
             android:title="@string/menu_Insertar" />
         <item
             android:id="@+id/listaVehiculos"
-            android:icon="@drawable/listaicono"
+            android:icon="@drawable/view_list_24px"
             android:title="@string/menu_lista" />
     </group>
 </menu>

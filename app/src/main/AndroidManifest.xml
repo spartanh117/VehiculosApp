@@ -12,7 +12,8 @@
         <activity
             android:name=".Main3Activity"
             android:label="@string/title_activity_main3"
-            android:theme="@style/Theme.VehiculosApp.NoActionBar">
+            android:theme="@style/Theme.VehiculosApp.NoActionBar"
+            android:windowSoftInputMode="adjustNothing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

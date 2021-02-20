@@ -16,4 +16,6 @@
     <string name="menu_Insertar">Insertar</string>
     <string name="menu_lista">Vehiculos</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="update">Actualizar</string>
+    <string name="delete">Eliminar</string>
 </resources>

@@ -2,15 +2,25 @@ package com.example.vehiculosapp.modelo;
 
 public class Vehiculo {
     private String marca,modelo,matricula;
+    private static Integer id = 0;
 
     public Vehiculo(String matricula) {
         this.matricula = matricula;
     }
 
-    public Vehiculo(String marca, String modelo, String matricula) {
+    public Vehiculo(String matricula,String marca, String modelo ) {
         this.marca = marca;
         this.modelo = modelo;
         this.matricula = matricula;
+        id++;
+    }
+
+    public static Integer getId() {
+        return id;
+    }
+
+    public static void setId(Integer id) {
+        Vehiculo.id = id;
     }
 
     public String getMarca() {

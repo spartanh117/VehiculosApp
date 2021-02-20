@@ -14,8 +14,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.example.vehiculosapp.BD.VehiculoSQLiteHelper;
-
-import  com.example.vehiculosapp.utilities.Utilities;
+import com.example.vehiculosapp.utilities.Utilities;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link InsertarVehiculo#newInstance} factory method to
@@ -62,7 +61,8 @@ public class InsertarVehiculo extends Fragment {
 
     private void insertarVehiculo() {
         try {
-            VehiculoSQLiteHelper conexion = new VehiculoSQLiteHelper(getContext(),"BDVehiculo",null,1);
+
+            VehiculoSQLiteHelper conexion = new VehiculoSQLiteHelper(getContext(), "BDVehiculo", null, 1);
             SQLiteDatabase db = conexion.getWritableDatabase();
 
             ContentValues values = new ContentValues();
@@ -78,12 +78,15 @@ public class InsertarVehiculo extends Fragment {
         catch (SQLException e){
             Toast.makeText(getContext(),"a ocurrido un error"+e.getMessage(),Toast.LENGTH_LONG).show();
         }
+        catch (Exception e){
+            Toast.makeText(getContext(),"a ocurrido un error"+e.getMessage(),Toast.LENGTH_LONG).show();
+        }
     }
 
     private void setUpView(View view) {
-        marca = (EditText)view.findViewById(R.id.edtiTextMarca);
-        modelo = (EditText)view.findViewById(R.id.edtiTextModelo);
-        matricula = (EditText)view.findViewById(R.id.edtiTextMatricula);
-        btnInsertar = (Button)view.findViewById(R.id.btnInsertar);
+        marca = (EditText)view.findViewById(R.id.edtiTextMarcaUD);
+        modelo = (EditText)view.findViewById(R.id.edtiTextModeloUD);
+        matricula = (EditText)view.findViewById(R.id.edtiTextMatriculaUD);
+        btnInsertar = (Button)view.findViewById(R.id.btnUpdate);
     }
 }
